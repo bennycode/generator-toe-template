@@ -1,5 +1,4 @@
 module.exports = {
-
   'Enter login credentials': function(browser) {
     var data = browser.globals;
 
@@ -10,7 +9,7 @@ module.exports = {
     browser.setValue("//*[@data-test-id='enter-password']", data.credentials.password);
   },
 
-  'Submit contact form': function(browser) {
+  'Submit login': function(browser) {
     browser.click("//*[@data-test-id='submit-login']");
     browser.waitForElementVisible("//*[@data-test-id='status-login']", 1000);
 
