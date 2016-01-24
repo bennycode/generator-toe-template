@@ -1,0 +1,16 @@
+{
+  "name": "generator-toe-template",
+  "description": "",
+  "main": [
+    "dist/generator-toe-template.js",
+    "dist/generator-toe-template.min.js",
+    "dist/generator-toe-template.min.js.map"
+  ],
+  "keywords": [],
+  "dependencies": {},
+  "devDependencies": {},
+  "ignore": [
+    "*",
+    "!dist/*"
+  ]
+}

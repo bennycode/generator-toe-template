@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <h1>Demo</h1>
+    <form id="form-login">
+      <fieldset>
+        <legend>Login</legend>
+        <p>
+          <label for="input-email">Email</label>
+          <br />
+          <input
+            data-test-id="enter-email"
+            id="input-email"
+            name="value-email"
+            type="email"
+          />
+        </p>
+
+        <p>
+          <label for="input-password">Password</label>
+          <br />
+          <input
+            data-test-id="enter-password"
+            id="input-password"
+            name="value-password"
+            type="password"
+          />
+        </p>
+
+        <input
+          data-test-id="submit-login"
+          type="submit"
+          value="Login"
+        />
+      </fieldset>
+    </form>
+    <script>
+      var formLogin = document.getElementById('form-login');
+      formLogin.addEventListener('submit', function(submitEvent) {
+
+        var inputEmail = document.getElementById('input-email').value;
+        var inputPassword = document.getElementById('input-password').value;
+
+        if (inputEmail && inputPassword && formLogin.checkValidity()) {
+          var paragraph = document.createElement('p');
+          var paragraphText = document.createTextNode('OK');
+          paragraph.appendChild(paragraphText);
+          paragraph.setAttribute('data-test-id', 'status-login');
+          paragraph.setAttribute('data-test-value', true);
+          this.appendChild(paragraph);
+        }
+
+        submitEvent.preventDefault();
+        return false;
+      });
+    </script>
+  </body>
+</html>
